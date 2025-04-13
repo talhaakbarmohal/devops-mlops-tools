@@ -1,0 +1,78 @@
+schema: '2.0'
+stages:
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+    - path: data/raw/Salary_dataset.csv
+      hash: md5
+      md5: 8dc10ea25f521345b75b3d5d286a0b5b
+      size: 663
+    - path: src/preprocess.py
+      hash: md5
+      md5: 2a3ee4479d6f1cf1f60fd607e3cc992c
+      size: 495
+    outs:
+    - path: data/processed/X_test.csv
+      hash: md5
+      md5: 6044457a11952668c3346aba543e05ed
+      size: 69
+    - path: data/processed/X_train.csv
+      hash: md5
+      md5: db92e5ff894af81b9101503d55e1b090
+      size: 215
+    - path: data/processed/y_test.csv
+      hash: md5
+      md5: 1dff76ef617d306869b62b1f6301cb5d
+      size: 55
+    - path: data/processed/y_train.csv
+      hash: md5
+      md5: cbc738221b56cab5f181f3aeaf8f6700
+      size: 206
+  train:
+    cmd: python src/train.py
+    deps:
+    - path: data/processed/X_train.csv
+      hash: md5
+      md5: db92e5ff894af81b9101503d55e1b090
+      size: 215
+    - path: data/processed/y_train.csv
+      hash: md5
+      md5: cbc738221b56cab5f181f3aeaf8f6700
+      size: 206
+    - path: params.yaml
+      hash: md5
+      md5: 75d48167f6eee63dcca4a9c5625d8e1e
+      size: 31
+    - path: src/train.py
+      hash: md5
+      md5: ddcbe8387b3fb886ca20095b1be512e1
+      size: 399
+    outs:
+    - path: models/model.pkl
+      hash: md5
+      md5: 941e2c0eca4d8a302682926b1644a838
+      size: 879
+  evaluate:
+    cmd: python src/evaluate.py
+    deps:
+    - path: data/processed/X_test.csv
+      hash: md5
+      md5: 6044457a11952668c3346aba543e05ed
+      size: 69
+    - path: data/processed/y_test.csv
+      hash: md5
+      md5: 1dff76ef617d306869b62b1f6301cb5d
+      size: 55
+    - path: models/model.pkl
+      hash: md5
+      md5: 941e2c0eca4d8a302682926b1644a838
+      size: 879
+    - path: src/evaluate.py
+      hash: md5
+      md5: 57e39e76aaa3d729a5ab63b95b00fcc5
+      size: 567
+    outs:
+    - path: metrics.json
+      hash: md5
+      md5: 51b06f0f71f0bdf905617c059136a614
+      size: 94
