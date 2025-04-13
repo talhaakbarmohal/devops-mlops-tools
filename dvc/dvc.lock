@@ -5,8 +5,8 @@ stages:
     deps:
     - path: data/raw/Salary_dataset.csv
       hash: md5
-      md5: 8dc10ea25f521345b75b3d5d286a0b5b
-      size: 663
+      md5: da623bd7c9bd0b743bd2e100c57bad95
+      size: 665
     - path: src/preprocess.py
       hash: md5
       md5: 2a3ee4479d6f1cf1f60fd607e3cc992c
@@ -22,8 +22,8 @@ stages:
       size: 215
     - path: data/processed/y_test.csv
       hash: md5
-      md5: 1dff76ef617d306869b62b1f6301cb5d
-      size: 55
+      md5: af29d249704068ba73daf602d27ddcec
+      size: 57
     - path: data/processed/y_train.csv
       hash: md5
       md5: cbc738221b56cab5f181f3aeaf8f6700
@@ -61,8 +61,8 @@ stages:
       size: 69
     - path: data/processed/y_test.csv
       hash: md5
-      md5: 1dff76ef617d306869b62b1f6301cb5d
-      size: 55
+      md5: af29d249704068ba73daf602d27ddcec
+      size: 57
     - path: models/model.pkl
       hash: md5
       md5: 941e2c0eca4d8a302682926b1644a838
@@ -74,5 +74,5 @@ stages:
     outs:
     - path: metrics.json
       hash: md5
-      md5: 51b06f0f71f0bdf905617c059136a614
-      size: 94
+      md5: 620ac8890e98996439411bd02d3c7b29
+      size: 95
