@@ -1,0 +1,6 @@
+[core]
+    remote = bucket_dvc
+['remote "gs_bucket"']
+    url = gs://model-bucket-11/dvc
+['remote "bucket_dvc"']
+    url = gs://model-bucket-11/dvc
